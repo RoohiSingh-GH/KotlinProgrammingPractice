@@ -1,0 +1,133 @@
+// when as expression
+
+//Program 1
+fun main(args:Array<String>)
+{
+    //when as expression
+
+    val x = 2
+
+    when (x) {
+        1 -> println("x is 1")
+        2 -> println("x is 2")
+    }
+
+}
+
+//Porogram 2
+fun main(args:Array<String>)
+{
+    //when as expression
+
+    val x = 5
+
+    when (x) {
+        1 -> println("x is 1")
+        2 -> println("x is 2")
+        else -> println("x value is unknown")
+    }
+
+}
+
+//Program 3
+fun main(args:Array<String>)
+{
+    //when as expression
+
+    val x = 0
+
+    when (x) {
+        0,1 -> {println("x is 0 OR 1")}
+        2 -> {println("x is 2")}
+        else -> {println("x value is unknown")
+        println("I dont know what is x")}
+    }
+
+}
+
+//Program 4
+fun main(args:Array<String>)
+{
+    //when as expression
+
+    val x = 11
+
+      when (x)
+    {
+        in 1..20 -> println("x lies in 1 to 20")
+        2 -> {println("x is 2")}
+        else -> {println("x value is unknown")
+            println("I dont know what is x")}
+    }
+
+}
+
+//Program 5
+fun main(args:Array<String>)
+{
+    //when as expression
+
+    val x = 11
+
+      when (x)
+    {
+        !in 1..20 -> println("x lies in 1 to 20")
+        2 -> {println("x is 2")}
+        else -> {println("x value is unknown")
+            println("I dont know what is x")}
+    }
+
+}
+
+//Program 6
+fun main(args:Array<String>)
+{
+    //when as expression
+
+    val x = 1
+    var str:String
+      when (x)
+    {
+        1 -> str = "x is 1"
+        2 -> str = "x is 2"
+        else -> str = "x value is unknown"
+    }
+    println(str)
+
+}
+
+//Program 7
+fun main(args:Array<String>)
+{
+    //when as expression
+
+    val x = 1
+   
+     var str:String = when (x)
+    {
+        1 -> "x is 1"
+        2 ->  "x is 2"
+        else -> "x value is unknown"
+    }
+    println(str)
+}
+
+//Program 8
+fun main(args:Array<String>)
+{
+    //when as expression
+
+    val x = 1
+   
+    var str:String = when (x)
+    {
+        1 -> "x is 1"
+        2 -> "x is 2"
+        else -> {
+                "x value is unknown"
+                "x is alien"
+                }
+    }
+    println(str)
+}
+
