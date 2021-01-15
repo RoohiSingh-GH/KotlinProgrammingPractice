@@ -1,0 +1,33 @@
+//Function and method
+
+//Program 1
+fun main(args: Array<String>){
+    add()
+}
+
+fun add() {
+    var a = 2
+    var b = 4
+    println("Sum is ${a+b}")
+}
+
+
+//Program 2
+fun main(args: Array<String>){
+    add(2,4)
+}
+
+fun add(a:Int,b:Int) {
+    println("Sum is ${a+b}")
+}
+
+//Program 3
+fun main(args: Array<String>){
+ var sum = add(2,4)
+    println("Sum is $sum")
+}
+
+fun add(a:Int,b:Int):Int
+{
+    return a+b
+}
