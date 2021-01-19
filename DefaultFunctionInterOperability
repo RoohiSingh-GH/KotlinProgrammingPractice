@@ -1,0 +1,27 @@
+//Default Function with Interoperability with @JvmOverloads
+
+//Program 1
+//Kotlin File
+@file:JvmName("MyCustomKotlinFileName")
+package com.mykotlin
+
+fun main(args: Array<String>){
+    var result = findVolume(2,3,30)
+    println(result)
+}
+
+@JvmOverloads
+fun findVolume(length:Int,breadth:Int,height:Int = 10):Int{
+    return length*breadth*height
+}
+
+//Java File
+package com.myjava;
+import com.mykotlin.MyCustomKotlinFileName;
+
+public class MyJavaFile {
+    public static void main(String[] args){
+        int result = MyCustomKotlinFileName.findVolume(4,7);
+        System.out.println(result);
+    }
+}
