@@ -1,0 +1,40 @@
+//Class with init and Primary Constructor
+
+//Program 1
+//Class with init and constructor
+fun main(args:Array<String>){
+    var student = Student("Manminder")
+}
+class Student constructor(name:String){
+   // var name: String = "dummy"
+
+    init {
+        println("Student has got a name as $name")
+    }
+}
+
+//Program 2
+//Property inside the class body
+fun main(args:Array<String>){
+    var student = Student("Manminder")
+
+    println("Student has got a name as ${ student.name}")
+}
+class Student(_name:String){
+    var name: String = "dummy"
+    init {
+        this.name = _name
+        println("Student has got a name as $_name")
+    }
+}
+
+//Program 3
+//Property of class
+fun main(args:Array<String>){
+    var student = Student("Manminder")
+}
+class Student (var name:String){
+    init {
+        println("Student has got a name as $name")
+    }
+}
