@@ -1,0 +1,17 @@
+//Secondary Constructor
+
+//Program 1
+fun main(args:Array<String>){
+    var student = Student("Manminder",10)
+    println(student.id)
+}
+class Student(var name:String){
+    var id:Int = -1
+    init {
+        println("Student has got a name as $name")
+    }
+    constructor(n:String,id:Int):this(n){
+        //body of the secondary constructor is called after the init block
+        this.id = id
+    }
+}
