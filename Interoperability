@@ -1,0 +1,73 @@
+//Create KOTLIN file and JAVA class in src.
+
+//Program 1 
+//Access a method inside KOTLIN class from inside the JAVA class
+//Kotlin program with name of file as MyfirstKt
+fun main(args:Array<String>){
+
+}
+fun add(a:Int,b:Int):Int{
+    return a+b
+}
+//Java class program
+public class MyJavaFile {
+    public static void main(String[] args){
+       int sum = MyfirstKtKt.add(2,3);
+        System.out.println(sum);
+    }
+}
+
+//Access JAVA method from KOTLIN file
+//Kotlin file
+fun main(args:Array<String>){
+var area = MyJavaFile.getArea(10,5)
+    println("Printing area from Kotlin file : " + area)
+}
+fun add(a:Int,b:Int):Int{
+    return a+b
+}
+//JAVA class program
+fun main(args:Array<String>){
+var area = MyJavaFile.getArea(10,5)
+    println("Printing area from Kotlin file : " + area)
+}
+fun add(a:Int,b:Int):Int{
+    return a+b
+}
+
+
+
+//@file:JvmName("MyCustomKotlinFile")
+The compiler give this file name while converting into the byte code as MyCustomKotlinFile.
+If want to access the method in KOTLIN file simply use this name which is "MyCustomKotlinFile".
+Nowonwards our kotlin file is now having the wrapper of class name of MyCustomKotlinFile which is defined at the file level.
+
+
+
+//Program 2
+//Create Package for java and kotlin so that can have JAVA file and KOTLIN file in same application.
+//JAVA file
+package com.myjava;
+import com.mykotlin.MyCustomKotlinFile;
+public class MyJavaFile {
+    public static void main(String[] args){
+       int sum = MyCustomKotlinFile.add(2,3);
+        System.out.println("Printing sum from JAVA file: " + sum);
+
+    }
+    public static int getArea(int l,int b){
+    return l*b;
+    }
+}
+//KOTLIN file
+@file:JvmName("MyCustomKotlinFile")
+package com.mykotlin
+import com.myjava.MyJavaFile
+
+fun main(args:Array<String>){
+var area = MyJavaFile.getArea(10,5)
+    println("Printing area from Kotlin file : " + area)
+}
+fun add(a:Int,b:Int):Int{
+    return a+b
+}
