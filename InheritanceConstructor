@@ -1,0 +1,40 @@
+//Inheritance with Primary and Secondary Constructor
+//Primary Constructor
+//Program 1
+
+fun main(args:Array<String>){
+    var dog = Dog("Black","Pug")
+
+}
+open class Animal(var color:String) { //Super Class
+    init {
+        println("From Animal Init: $color")
+    }
+}
+class Dog( color: String,var breed:String) : Animal(color){ //Derived Class
+    init {
+        println("From Dog Init: $color and $breed")
+    }
+}
+
+//Secondary Constructor
+//Program 2
+
+fun main(args:Array<String>){
+    var dog = Dog("Black","Pug")
+
+}
+open class Animal { //Super Class
+    var color:String = ""
+   constructor(color:String){
+       this.color = color
+       println("From Animal: $color")
+   }
+}
+class Dog : Animal{ //Derived Class
+    var breed:String = ""
+   constructor( color: String,breed:String): super(color){
+       this.breed = breed
+       println("From Dog: $color and $breed")
+   }
+}
