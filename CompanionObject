@@ -1,0 +1,16 @@
+//Companion Object
+ //Program 1
+ 
+fun main(args:Array<String>){
+    MyClass.count
+    MyClass.typeOfCustomer()
+}
+class MyClass {
+   companion object {
+        var count:Int = -1              //Behaves like STATIC variable
+       @JvmStatic                       //if called from inside java file
+        fun typeOfCustomer():String {   //Behaves like STATIC methods
+            return "Indian"
+        }
+    }
+}
