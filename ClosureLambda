@@ -1,0 +1,19 @@
+//Closure
+In JAVA 8, cannot mutate the outside variable inside Lambda
+In KOTLIN we can
+
+//Program 1
+
+fun main(args:Array<String>){
+    val program = MyProgramthree()
+    var result = 0 //Outside variable
+
+    program.addTwoNumbers(2,7){ x,y -> result = x + y}
+    println(result)
+}
+
+class MyProgramthree {
+    fun addTwoNumbers(a:Int,b:Int,action:(Int,Int) -> Unit)  { //High Level Function with Lambda as Parameter
+       action(a,b)  //result = x + y = a + b = 2 + 7 = 9
+    }
+}
