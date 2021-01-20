@@ -1,0 +1,84 @@
+//High Level Functions
+-can accept function as parameter
+-can return function
+-or can do both
+
+//Program 1 (Better Understanding)
+fun main(args:Array<String>){
+   val program = Program()
+   program.addTwoNumbers(2,7)         //Simple way..for Better Understanding
+}
+class Program {
+    fun addTwoNumbers(a:Int,b:Int){   //Simple way..Just for better Understanding
+        val sum = a + b
+        println(sum) //Body
+    }
+}
+
+//Program 2
+//Using interface
+fun main(args:Array<String>){
+   val program = Program()
+   program.addTwoNumbers(2,7)  //Simple way..for Better Understanding
+    program.addTwoNumbers(2,7,object :MyInterface{
+        override fun excecute(sum: Int) {
+            println(sum) //Body
+        }
+    })
+}
+
+class Program {
+
+    fun addTwoNumbers(a:Int,b:Int,action: MyInterface){      //Using Interface/Object Oriented Way
+        val sum = a + b
+        action.excecute(sum)
+    }
+
+    fun addTwoNumbers(a:Int,b:Int){                       //Simple way..Just for better Understanding
+        val sum = a + b
+        println(sum) //Body
+    }
+}
+
+interface MyInterface {
+    fun excecute(sum:Int)
+}
+
+//Program 3
+
+fun main(args:Array<String>){
+   val program = Program()
+   program.addTwoNumbers(2,7)                                              //Simple way..for Better Understanding
+    program.addTwoNumbers(2,7,object :MyInterface{                         //Interface
+        override fun excecute(sum: Int) {
+            println("interface - " + sum) //Body
+        }
+    })
+
+    val test:String = "Hello"
+
+    val myLambda: (Int) -> Unit = { s:Int ->  println("lambda -" + s) }    //Lambda Expression [Function]
+    program.addTwoNumbers(2,7,myLambda)
+}
+
+class Program {
+
+    fun addTwoNumbers(a:Int,b:Int,action: (Int) -> Unit){                     //High Level Function with Lambda as Parameter
+        val sum = a + b
+        action(sum) //println(sum)
+    }
+
+    fun addTwoNumbers(a:Int,b:Int,action: MyInterface){                       //Using Interface/Object Oriented Way
+        val sum = a + b
+        action.excecute(sum)
+    }
+
+    fun addTwoNumbers(a:Int,b:Int){                                           //Simple way..Just for better Understanding
+        val sum = a + b
+        println("simple -" + sum) //Body
+    }
+}
+
+interface MyInterface {
+    fun excecute(sum:Int)
+}
