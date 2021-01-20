@@ -1,0 +1,82 @@
+//Data Class
+
+//Program 1
+
+fun main(args:Array<String>){
+    var user1 = User("Sam",10)
+    var user2 = User("Sam",10)
+
+    if (user1 == user2){
+        println("Equal")
+    }
+    else {
+        println("Not Equal")
+    }
+}
+
+data class User(var name:String,var id:Int){
+
+}
+
+//Program 2
+
+fun main(args:Array<String>){
+    var user1 = User("Sam",10)
+    var user2 = User("Sam",10)
+
+    println(user1)
+    if (user1 == user2){
+        println("Equal")
+    }
+    else {
+        println("Not Equal")
+    }
+}
+
+data class User(var name:String,var id:Int){
+
+}
+
+//Program 3
+
+fun main(args:Array<String>){
+    var user1 = User("Sam",10)
+    var user2 = User("Sam",10)
+
+    println(user1.toString())
+    if (user1 == user2){
+        println("Equal")
+    }
+    else {
+        println("Not Equal")
+    }
+
+    var newUser = user1.copy()
+    println(newUser)
+}
+
+data class User(var name:String,var id:Int){
+
+}
+
+//Program 4
+
+fun main(args:Array<String>){
+    var user1 = User("Sam",10)
+    var user2 = User("Sam",10)
+
+    println(user1.toString())
+    if (user1 == user2){
+        println("Equal")
+    }
+    else {
+        println("Not Equal")
+    }
+
+    var newUser = user1.copy(name = "Peter")
+    println(newUser)
+}
+
+data class User(var name:String,var id:Int){
+
+}
