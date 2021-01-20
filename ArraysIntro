@@ -1,0 +1,50 @@
+//
+//Program 1
+
+fun main(args:Array<String>){
+    //Array
+    //Elements: 32  54  0  0  0
+    //Index:    0   1   2  3  4
+
+    var myArray = Array<Int>(5){ 0 }  //Mutuable, Fixed Size
+    myArray[0] = 32
+    myArray[3] = 54
+    println(myArray[3])
+}
+
+//Program 2
+//print all value
+fun main(args:Array<String>){
+    //Array
+    //Elements: 32  54  0  0  0
+    //Index:    0   1   2  3  4
+
+    var myArray = Array<Int>(5){ 0 }  //Mutuable, Fixed Size
+    myArray[0] = 32
+    myArray[3] = 54
+    
+    for(element in myArray){
+        println(element)
+    }
+}
+
+//Program 3
+
+fun main(args:Array<String>){
+    //Array
+    //Elements: 32  54  0  0  0
+    //Index:    0   1   2  3  4
+
+    var myArray = Array<Int>(5){ 0 }      //Mutuable, Fixed Size
+    myArray[0] = 32
+    myArray[3] = 54
+    myArray[1] = 11
+
+    for(element in myArray){              //Using Individual Element (Objects)
+        println(element)
+    }
+
+    for(index in 0..myArray.size - 1){   //Using Index
+        println(myArray[index])
+    }
+}
