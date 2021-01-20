@@ -1,0 +1,26 @@
+//lazy keyword
+
+//Program 1
+//Variable is declare but not used which will result in waste of memory
+val pi:Float = 3.14f  //Waste of memory
+fun main(args:Array<String>) {
+    println("Some initial code.....")
+
+    println("some code.....")
+}
+
+//therefore
+
+val pi:Float by lazy {  3.14f }  //Waste of memory
+
+fun main(args:Array<String>) { 
+    println("Some initial code.....")
+    val area1 = pi * 4 * 4
+    println(area1)
+    println("some code.....")
+}
+
+//variable not initialized untill you use it and if again used then taken from cache memory
+//thread safe
+//var aor val
+//nullable or non-nullable
