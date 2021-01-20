@@ -1,0 +1,80 @@
+//Filter and Map function
+
+//Program 1
+/** FILTER
+ *Returns a list containing only elements matching the given [predicate].
+ */
+/** MAP
+ *Returns a list containing the results of applying the given [transform] function
+ * to each element in the original collection
+ */
+
+fun main(args:Array<String>){
+
+    val myNumbers:List<Int> = listOf(2,3,4,6,23,90)
+    val mySmallNums: List<Int> = myNumbers.filter { it < 10 }     //OR { num -> num < 10}
+    for (num in mySmallNums){
+        println("Small Numbers : " + num)
+    }
+
+    println()
+
+    val mySquaredNums = myNumbers.map { it * it }                //OR { num -> num * num}
+    for (num in mySquaredNums){
+        println("Squared Numbers : " + num)
+    }
+
+    println()
+
+    val mySmallSquaredNums = myNumbers.filter { it < 10 }.map { it * it }
+    for (num in mySmallSquaredNums){
+        println("Small Squared Numbers : " + num)
+    }
+}
+
+//Program 2
+/** FILTER
+ *Returns a list containing only elements matching the given [predicate].
+ */
+/** MAP
+ *Returns a list containing the results of applying the given [transform] function
+ * to each element in the original collection
+ */
+
+fun main(args:Array<String>){
+
+    val myNumbers:List<Int> = listOf(2,3,4,6,23,90)
+    val mySmallNums: List<Int> = myNumbers.filter { it < 10 } // OR { num -> num < 10}
+    for (num in mySmallNums){
+        println("Small Numbers : " + num)
+    }
+
+    println()
+
+    val mySquaredNums = myNumbers.map { it * it } // OR { num -> num * num}
+    for (num in mySquaredNums){
+        println("Squared Numbers : " + num)
+    }
+
+    println()
+
+    val mySmallSquaredNums = myNumbers.filter { it < 10 }.map { it * it }
+    for (num in mySmallSquaredNums){
+        println("Small Squared Numbers : " + num)
+    }
+
+    println()
+
+    var people = listOf<Person>(Person(10,"Parmeet"),Person(23,"Roohi"),Person(17,"Dipali"))
+   // var names = people.map { it.name }
+    var names = people.filter { it.name.startsWith("R") }
+                        .map { it.name }
+    for (name in names){
+        println("Person names : " + name)
+    }
+}
+
+class Person(var age:Int,var name: String){
+
+}
+
