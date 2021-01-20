@@ -1,0 +1,104 @@
+//List 
+//Program 1
+//Immutable List
+fun main(args:Array<String>){
+    //Array
+    //Elements: 32  54  0  0  0
+    //Index:    0   1   2  3  4
+
+  var list = listOf<String>( "Parmeet", "Dipali", "Umang" )   //Immutable,Fixed Size,READ ONLY
+
+    for(element in list){                                     //Using Individual Element (Objects)
+        println("Print by element " + element)
+    }
+
+    println()
+
+    for(index in 0..list.size - 1){                           //Using Index of the Element (Objects)
+        println("Print by index "+ list[index])               //list.get(index)
+    }
+}
+
+//Program 2
+//Mutuable List
+
+fun main(args:Array<String>){
+    //Array
+    //Elements: 32  54  0  0  0
+    //Index:    0   1   2  3  4
+
+  var list = mutableListOf<String>() // Mutuable, No Fixed Size, Can Add or Remove Elements
+    list.add("Parmeet")
+    list.add("Dipali")
+    list.add("Umang")
+
+    list.remove("Umang")
+    list.add(2,"Roohi")
+
+    for(element in list){ //Using Individual Element (Objects)
+        println("Print by element " + element)
+    }
+
+    println()
+
+    for(index in 0..list.size - 1){  //Using Index of the Element (Objects)
+        println("Print by index "+ list[index])  //list.get(index)
+    }
+}
+
+//Program 3
+
+fun main(args:Array<String>){
+    //Array
+    //Elements: 32  54  0  0  0
+    //Index:    0   1   2  3  4
+
+  var list = mutableListOf<String>() // Mutuable, No Fixed Size, Can Add or Remove Elements
+    list.add("Parmeet")
+    list.add("Dipali")
+    list.add("Umang")
+    
+    list[2] = "Alisha"
+
+    for(element in list){ //Using Individual Element (Objects)
+        println("Print by element " + element)
+    }
+
+    println()
+
+    for(index in 0..list.size - 1){  //Using Index of the Element (Objects)
+        println("Print by index "+ list[index])  //list.get(index)
+    }
+}
+
+//Ways use any of it -    var list = mutableListOf<String>() 
+                          var list = arrayListOf<String>()    
+                          var list = ArrayList<String>()      
+
+fun main(args:Array<String>){
+    //Array
+    //Elements: 32  54  0  0  0
+    //Index:    0   1   2  3  4
+
+   // var list = mutableListOf<String>() // Mutuable, No Fixed Size, Can Add or Remove Elements
+   // var list = arrayListOf<String>()    // Mutuable, No Fixed Size, Can Add or Remove Elements
+    var list = ArrayList<String>()      // Mutuable, No Fixed Size, Can Add or Remove Elements
+    list.add("Parmeet")
+    list.add("Dipali")
+    list.add("Umang")
+
+   // list.remove("Umang")
+    //list.add(2,"Roohi")
+
+    list[2] = "Alisha"
+
+    for(element in list){ //Using Individual Element (Objects)
+        println("Print by element " + element)
+    }
+
+    println()
+
+    for(index in 0..list.size - 1){  //Using Index of the Element (Objects)
+        println("Print by index "+ list[index])  //list.get(index)
+    }
+}
