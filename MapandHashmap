@@ -1,0 +1,29 @@
+//Immutable Map
+//Program 1
+fun main(args:Array<String>){
+    //Map : Key-Value Pair
+    var myMap = mapOf<Int,String>(2 to "Parmeet", 43 to "Dipali", 7 to "Roohi")  //Immutable ,Fixed,READ ONLY
+    
+    for(key in myMap.keys){ //Using Individual Element (Objects)
+        println("Elemet at key: $key = ${myMap[key]}")  //myMap.get(key)
+    }
+}
+
+//Program 2
+//Mutable Map
+fun main(args:Array<String>){
+    //Map : Key-Value Pair
+    var myMap = HashMap<Int,String>()  //Mutable ,READ and WRITE both,No FIXED Size
+    //var myMap = mutableMapOf<Int,String>()  //Mutable ,READ and WRITE both,No FIXED Size
+    //var myMap = hashMapOf<Int,String>()  //Mutable ,READ and WRITE both,No FIXED Size
+    myMap.put(4,"Parmeet")
+    myMap.put(43,"Dipali")
+    myMap.put(7,"Roohi")
+
+    //myMap.replace(43,"Alisha")
+    myMap.put(43,"Alisha")
+
+    for(key in myMap.keys){ //Using Individual Element (Objects)
+        println("Element at key: $key = ${myMap[key]}")  //myMap.get(key)
+    }
+}
