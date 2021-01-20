@@ -1,0 +1,29 @@
+//When we have one parameter in Lambda Expression then write it for singleton
+//Program 1
+//To understand with one parameter
+fun main(args:Array<String>){
+  val pg = MyProgramfour()
+    pg.reverseAndDisplay("Hello",{s -> s.reversed()})
+}
+
+class MyProgramfour {
+  fun reverseAndDisplay(str:String, myFunc:(String) -> String){
+   var result = myFunc(str)
+      println(result)
+  }
+}
+
+//Changed to 
+//Program 2
+
+fun main(args:Array<String>){
+  val pg = MyProgramfour()
+    pg.reverseAndDisplay("Hello",{it.reversed()})
+}
+
+class MyProgramfour {
+  fun reverseAndDisplay(str:String, myFunc:(String) -> String){
+   var result = myFunc(str)
+      println(result)
+  }
+}
