@@ -1,0 +1,21 @@
+//lateinit
+//Program 1
+
+fun main(args:Array<String>){
+    val country = Country()
+   // country.name = "India"
+   // println(country.name)
+    country.setUp()
+}
+
+class Country {
+    lateinit var name:String
+    fun setUp(){
+        name = "Canada"
+        println("The name of country is $name")
+    }
+}
+
+//lateinit used only with mutable data type [ var ]
+//lateinit used only with non-nullable data type
+//lateinit values must be initialized before you use it
