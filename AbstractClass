@@ -1,0 +1,20 @@
+//Abstract Class
+
+//Program 1
+fun main(args:Array<String>){
+
+}
+abstract open class Person{
+    abstract var name:String //abstract are "open" by default
+    abstract fun eat() //abstract methods are "open" by default
+    open fun getHeight(){} //A "open" function ready to overriden
+    fun goToSchool(){} //A Normal function public and final by default
+
+}
+
+class Indian:Person(){
+    override var name:String = "dummy"
+    override fun eat() {
+        TODO("Not yet implemented")
+    }
+}
