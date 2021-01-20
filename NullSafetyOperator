@@ -1,0 +1,34 @@
+//Null Safety Operator
+1.Safe Call Operator ?.
+2.Elvis ?:
+3.Not Null Assertion !!
+4.Safe Call with let ?.let{..}
+
+//Program 1
+
+fun main(args:Array<String>){
+    //WAP to find out length of name
+    val name:String? = "Steve"
+
+    //1.Safe Call ( ?. )
+    //Returns the length if 'name' is not null else returns null
+    //Use it if you don't mind getting NULL value
+
+    println("The length of the name is ${name?.length}")
+
+    //2.Safe Call with let ( ?.let{..} )
+    //It executes the block ONLY if name is NOT NULL
+    name?.let { println("The length of the name with safe call let is ${name.length}") }
+
+    //Elvis-operator ( ?: )
+    //When we have nullable reference 'name', we say "is name is not null",use it
+    //otherwise use some non-null value
+    val length = name?.length ?: -1
+    println("The lenght of the name with elvis operator  ${length}")
+
+    //4.Non-Null assertion operator ( !! )
+    //Use it when you are sure that the value is null
+    //Throw NllPointerException if the value is found to be NULL
+    println("The length of name with NON-NULL ASSERTION is ${name!!.length}")
+
+}
