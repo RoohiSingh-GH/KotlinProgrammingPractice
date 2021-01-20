@@ -1,0 +1,66 @@
+]
+//Program 1
+fun main(args:Array<String>){
+    var person=Person()
+    person.name="Manminder"
+    person.age=28
+    
+    with(person)
+
+    println(person.name)
+    println(person.age)
+}
+
+class Person{
+    var name:String=""
+    var age:Int=-1
+    fun startRun(){
+        println("Now I am ready to run")
+    }
+}
+
+//person object is repeated again and again so 
+//Program 2
+//with keyword
+fun main(args:Array<String>){
+    var person=Person()
+
+
+    with(person) //with is part of KOTLIN standard library not the KOTLIN language
+        name="Manminder"
+        age=28
+    }
+
+    println(person.name)
+    println(person.age)
+}
+
+class Person{
+    var name:String=""
+    var age:Int=-1
+    fun startRun(){
+        println("Now I am ready to run")
+    }
+}
+
+//Program 3
+//apply keyword
+fun main(args:Array<String>){
+    var person=Person()
+
+    person.apply {
+        name="Manminder"
+        age=28
+    }.startRun()
+
+    println(person.name)
+    println(person.age)
+}
+
+class Person{
+    var name:String=""
+    var age:Int=-1
+    fun startRun(){
+        println("Now I am ready to run")
+    }
+}
