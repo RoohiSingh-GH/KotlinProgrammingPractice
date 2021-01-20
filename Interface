@@ -1,0 +1,92 @@
+//Interface
+
+//Program 1
+
+fun main(args:Array<String>){
+    var myBtn = MyButton()
+    myBtn.onTouch()
+    myBtn.onClick()
+}
+interface MyInterfaceListener{  //you cannot create instance of interface
+  var name:String               //Properties in interface are abstract by default
+  fun onTouch()                 //Methods in interface are abstract by default
+  fun onClick(){                //Normal methods are public and open by default NOT FINAL
+      //Code
+  }
+}
+
+class MyButton:MyInterfaceListener{
+    override var name:String = "dummy"
+    override fun onTouch() {
+        println("Button was touched")
+    }
+
+    override fun onClick() {
+        super.onClick()
+        println("Button was clicked")
+    }
+}
+
+//Program 2
+
+fun main(args:Array<String>){
+    var myBtn = MyButton()
+    myBtn.onTouch()
+    myBtn.onClick()
+}
+interface MyInterfaceListener{    //you cannot create instance of interface
+  var name:String                 //Properties in interface are abstract by default
+  fun onTouch()                   //Methods in interface are abstract by default
+  fun onClick(){                  //Normal methods are public and open by default NOT FINAL
+  println("onClick interface code: Button Clicked")
+  }
+}
+
+class MyButton:MyInterfaceListener{
+    override var name:String = "dummy"
+    override fun onTouch() {
+        println("Button was touched")
+    }
+
+    override fun onClick() {
+        super.onClick()
+        println("Button was clicked")
+    }
+}
+
+//Program 3
+
+fun main(args:Array<String>){
+    var myBtn = MyButton()
+    myBtn.onTouch()
+    myBtn.onClick()
+}
+interface MyInterfaceListener{ //you cannot create instance of interface
+  var name:String //Properties in interface are abstract by default
+  fun onTouch() //Methods in interface are abstract by default
+  fun onClick(){  //Normal methods are public and open by default NOT FINAL
+      println("onClick interface code: Button Clicked")
+  }
+}
+
+interface MySecondInterface{ //you cannot create instance of interface
+
+    fun onTouch(){    //Normal Method
+        println("MySecondInterface: onTouch")
+    }
+    fun onClick(){    //Normal methods are public and open by default NOT FINAL
+        println("MySecondInterface: onClick")
+    }
+}
+
+class MyButton:MyInterfaceListener,MySecondInterface{
+    override fun onTouch() {
+        super.onTouch()
+    }
+
+    override fun onClick() {
+      super<MyInterfaceListener>.onClick()
+        super<MySecondInterface>.onClick()
+    }
+
+}
